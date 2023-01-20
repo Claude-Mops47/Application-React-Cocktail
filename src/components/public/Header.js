@@ -16,6 +16,10 @@ const Header = () => {
           <li>
             <Link to="/contact">Contact</Link>
           </li>
+          | &nbsp;
+          <li>
+            <Link to="/admin">Admin</Link>
+          </li>
         </ul>
       </nav>
     </header>

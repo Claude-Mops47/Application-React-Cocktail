@@ -6,8 +6,12 @@
   text-align: center;
   line-height: 50px;
   background-color: grey;
+  display: flex;
+  justify-content: space-between;
 }
-
+.Header_Admin button {
+  width: 80px;
+}
 .SideMenu {
   flex-grow: 1;
   border-right: solid 1px gray;
