@@ -27,13 +27,13 @@ const SideMenu = () => {
         </li>
         &nbsp;
         <li>
-          Cocktail
+          Pokemon
           <ul>
             <li>
-              <Link to="/admin/cocktail/index">Liste</Link>
+              <Link to="/admin/pokemon/index">Liste</Link>
             </li>
             <li>
-              <Link to="/admin/cocktail/edit">Ajouter</Link>
+              <Link to="/admin/pokemon/edit">Ajouter</Link>
             </li>
           </ul>
         </li>

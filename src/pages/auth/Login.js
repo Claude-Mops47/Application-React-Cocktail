@@ -28,7 +28,7 @@ const Login = () => {
       .then((res) => {
         accountService.saveToken(res.data.token);
         navigate("/admin", { replace: true });
-        console.log(res);
+        // console.log(res);
       })
       .catch((error) => console.log(error));
   };
