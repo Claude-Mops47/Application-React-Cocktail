@@ -8,6 +8,7 @@ const Pokemon = () => {
   const [pokemons, setPokemons] = useState([]);
   const flag = useRef(false);
 
+  // useEffect stop double appel
   useEffect(() => {
     if (flag.current === false) {
       pokemonService
@@ -31,8 +32,8 @@ const Pokemon = () => {
             <th>Name</th>
             <th>hp</th>
             <th>cp</th>
-            <th>created</th>
             <th>picture</th>
+            <th>created</th>
           </tr>
         </thead>
         <tbody>
@@ -42,10 +43,10 @@ const Pokemon = () => {
               <td>{pokemon.name}</td>
               <td>{pokemon.hp}</td>
               <td>{pokemon.cp}</td>
-              <td>{pokemon.created}</td>
               <td>
                 <img src={pokemon.picture} alt="img"></img>
               </td>
+              <td>{pokemon.created}</td>
             </tr>
           ))}
         </tbody>
