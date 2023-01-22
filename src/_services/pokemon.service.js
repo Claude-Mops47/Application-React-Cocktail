@@ -1,7 +1,8 @@
 import Axios from "./caller.service";
 
-let getAllPokemons = () => {
-  return Axios.get("/api/pokemons");
+let getAllPokemons = async () => {
+  const { data } = await Axios.get("/api/pokemons");
+  return data;
 };
 
 let getPokemon = (uid) => {

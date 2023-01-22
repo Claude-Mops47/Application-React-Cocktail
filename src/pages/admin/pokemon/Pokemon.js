@@ -1,26 +1,36 @@
-import React, { useEffect, useRef, useState } from "react";
+// import React, { useEffect, useRef, useState } from "react";
 // import { useNavigate } from "react-router-dom";
+import { useQuery } from "react-query";
 
-import { pokemonService } from "@/_services/pokemon.service";
+import { pokemonService } from "@/_services";
 
 const Pokemon = () => {
   // let navigate = useNavigate();
-  const [pokemons, setPokemons] = useState([]);
-  const flag = useRef(false);
+  // const flag = useRef(false);
+  // const [pokemons, setPokemons] = useState([]);
+
+  const { isLoading, data } = useQuery("pokemons", () =>
+    pokemonService.getAllPokemons()
+  );
+  const pokemons = data || { data: [] };
+
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
 
   // useEffect stop double appel
-  useEffect(() => {
-    if (flag.current === false) {
-      pokemonService
-        .getAllPokemons()
-        .then((res) => {
-          setPokemons(res.data.data);
-          console.log(res.data.data);
-        })
-        .catch((err) => console.log(err));
-    }
-    return () => (flag.current = true);
-  }, []);
+  // useEffect(() => {
+  //   if (flag.current === false) {
+  //     pokemonService
+  //       .getAllPokemons()
+  //       .then((res) => {
+  //         setPokemons(res.data.data);
+  //         console.log(res.data.data);
+  //       })
+  //       .catch((err) => console.log(err));
+  //   }
+  //   return () => (flag.current = true);
+  // }, []);
 
   return (
     <div className="Pokemon">
@@ -28,7 +38,7 @@ const Pokemon = () => {
       <table>
         <thead>
           <tr>
-            <th>#</th>
+            <th>Id</th>
             <th>Name</th>
             <th>hp</th>
             <th>cp</th>
@@ -37,7 +47,7 @@ const Pokemon = () => {
           </tr>
         </thead>
         <tbody>
-          {pokemons.map((pokemon) => (
+          {pokemons.data.map((pokemon) => (
             <tr key={pokemon.id}>
               <td>{pokemon.id}</td>
               <td>{pokemon.name}</td>
