@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
 import { pokemonService } from "@/_services";
+import { useParams, useNavigate } from "react-router-dom";
 // import { useQuery } from "react-query";
 
 const PokemonEdit = () => {
@@ -24,16 +24,21 @@ const PokemonEdit = () => {
 
   // Handle modification dans le formulaire
   const onChange = (e) => {
-    setPokemon({
-      ...pokemon,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    if (name === "types") {
+      setPokemon({
+        ...pokemon,
+        types: value.split(","),
+      });
+    } else {
+      setPokemon({ ...pokemon, [name]: value });
+    }
   };
 
   // Soumission du formulaire
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(pokemon);
+    // console.log(pokemon);
     pokemonService
       .updatePokemon(pokemon)
       .then(navigate("../index"))
@@ -85,10 +90,10 @@ const PokemonEdit = () => {
           />
         </div>
         <div className="group">
-          <label htmlFor="type">Type</label>
+          <label htmlFor="types">Types</label>
           <input
             type="text"
-            name="type"
+            name="types"
             value={pokemon.types || ""}
             onChange={onChange}
           />

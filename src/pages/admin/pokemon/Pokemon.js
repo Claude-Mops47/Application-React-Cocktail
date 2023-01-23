@@ -5,6 +5,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { pokemonService } from "@/_services";
 import { Link } from "react-router-dom";
 
+import "./pokemon.css";
+
 const Pokemon = () => {
   // let navigate = useNavigate();
   const flag = useRef(false);
@@ -80,7 +82,7 @@ const Pokemon = () => {
               <td>{pokemon.name}</td>
               <td>{pokemon.hp}</td>
               <td>{pokemon.cp}</td>
-              <td>{pokemon.types}</td>
+              <td>{pokemon.types.join(", ")}</td>
               <td>
                 <img src={pokemon.picture} alt="img"></img>
               </td>
@@ -89,6 +91,29 @@ const Pokemon = () => {
           ))}
         </tbody>
       </table>
+      <section>
+        <div class="card-container">
+          {pokemons.map((pokemon) => (
+            <div class="card">
+              <Link to={`../edit/${pokemon.id}`}>
+                <img src={pokemon.picture} alt="img" />
+              </Link>
+              <div class="content">
+                <h3>{pokemon.name}</h3>
+                <p>HP : {pokemon.hp}</p>
+                <p>CP : {pokemon.cp}</p>
+                <p>Type : {pokemon.types.join(", ")}</p>
+                <span
+                  className="del_btn"
+                  onClick={() => delPokemon(pokemon.id)}
+                >
+                  X
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 };

@@ -22,8 +22,8 @@ const AdminRouter = () => {
           <Route path="edit/:uid" element={<PokemonEdit />} />
           <Route path="add" element={<PokemonAdd />} />
         </Route>
-        <Route path="*" element={<Error />} />
       </Route>
+      <Route path="*" element={<Error />} />
     </Routes>
   );
 };

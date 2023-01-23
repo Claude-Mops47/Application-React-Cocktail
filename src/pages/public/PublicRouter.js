@@ -14,9 +14,8 @@ const PublicRouter = () => {
         <Route path="home" element={<Home />} />
         <Route path="service" element={<Service />} />
         <Route path="contact" element={<Contact />} />
-
-        <Route path="*" element={<Error />} />
       </Route>
+      <Route path="*" element={<Error />} />
     </Routes>
   );
 };

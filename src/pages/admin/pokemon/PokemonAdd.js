@@ -4,8 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const PokemonAdd = () => {
   const [pokemon, setPokemon] = useState([]);
-
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   // Handle modification dans le formulaire
   const onChange = (e) => {
@@ -20,15 +19,13 @@ const PokemonAdd = () => {
     }
   };
 
+  // Soumission du formulaire
   const onSubmit = (e) => {
     e.preventDefault();
     // console.log(pokemon);
     pokemonService
       .addPokemon(pokemon)
-      .then((pokemon) => {
-        // console.log(pokemon);
-        navigate("../index");
-      })
+      .then(navigate("../index"))
       .catch((err) => console.log(err));
   };
 
@@ -82,7 +79,7 @@ const PokemonAdd = () => {
           />
         </div>
         <div className="group">
-          <button>Modifier</button>
+          <button>Ajouter</button>
         </div>
       </form>
     </div>

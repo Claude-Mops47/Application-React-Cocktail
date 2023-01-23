@@ -1,0 +1,19 @@
+* .error {
+  box-sizing: border-box;
+}
+body .error {
+  font: 110%/1.5 system-ui, sans-serif;
+  background: #131417;
+  color: white;
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+.error main {
+  max-width: 350px;
+}
+.error a {
+  color: #56bbf9;
+}
