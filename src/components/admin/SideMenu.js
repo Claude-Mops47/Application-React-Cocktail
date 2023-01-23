@@ -33,7 +33,7 @@ const SideMenu = () => {
               <Link to="/admin/pokemon/index">Liste</Link>
             </li>
             <li>
-              <Link to="/admin/pokemon/edit">Ajouter</Link>
+              <Link to="/admin/pokemon/add">Ajouter</Link>
             </li>
           </ul>
         </li>

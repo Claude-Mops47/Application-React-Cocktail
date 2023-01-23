@@ -27,3 +27,10 @@
   flex-grow: 6;
   padding-left: 15px;
 }
+
+/* btn  */
+
+.del_btn {
+  cursor: pointer;
+  color: red;
+}

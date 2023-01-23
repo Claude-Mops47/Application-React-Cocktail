@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router";
 
 import { Dashboard, ALayout } from "@/pages/admin";
 import { User, UserEdit, UserAdd } from "@/pages/admin/user";
-import { Pokemon, PokemonEdit } from "@/pages/admin/pokemon";
+import { Pokemon, PokemonEdit, PokemonAdd } from "@/pages/admin/pokemon";
 import Error from "@/_utils/Error";
 
 const AdminRouter = () => {
@@ -19,7 +19,8 @@ const AdminRouter = () => {
         </Route>
         <Route path="pokemon">
           <Route path="index" element={<Pokemon />} />
-          <Route path="edit" element={<PokemonEdit />} />
+          <Route path="edit/:uid" element={<PokemonEdit />} />
+          <Route path="add" element={<PokemonAdd />} />
         </Route>
         <Route path="*" element={<Error />} />
       </Route>
