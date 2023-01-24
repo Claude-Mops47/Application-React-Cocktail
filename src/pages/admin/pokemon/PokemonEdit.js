@@ -62,6 +62,8 @@ const PokemonEdit = () => {
     <div className="PokemonEdit">
       Pokemon Edit
       <form onSubmit={onSubmit}>
+        <img src={pokemon.picture} alt={pokemon.name} />
+
         <div className="group">
           <label htmlFor="name">Name</label>
           <input

@@ -1,7 +1,8 @@
 import React from "react";
-import "@/pages/admin/admin.css";
 import { accountService } from "@/_services/account.service.js";
 import { useNavigate } from "react-router-dom";
+
+import "@/components/styles/header.css";
 
 const Header = () => {
   let navigate = useNavigate();
