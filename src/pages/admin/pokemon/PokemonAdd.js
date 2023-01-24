@@ -30,7 +30,7 @@ const PokemonAdd = () => {
   };
 
   return (
-    <div className="PokemonAdd">
+    <div className="pokemon_add">
       Pokemon Add
       <form onSubmit={onSubmit}>
         <div className="group">

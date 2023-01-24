@@ -41,7 +41,7 @@ const UserEdit = () => {
   }, []);
 
   return (
-    <div className="UserEdit">
+    <div className="user_edit">
       UserEdit
       <form onSubmit={onSubmit}>
         <div className="group">

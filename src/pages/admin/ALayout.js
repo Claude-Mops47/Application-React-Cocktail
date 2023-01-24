@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router";
-import "@/components/styles/admin.css";
+import "@/components/styles/header.css";
 
 import Header from "@/components/admin/Header";
 import SideMenu from "@/components/admin/SideMenu";

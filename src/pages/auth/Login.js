@@ -1,42 +1,13 @@
-import "@/components/styles/auth.css";
+import "@/components/styles/pages_auth.css";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { accountService } from "@/_services";
 import "@/App.css";
-import jwt_decode from "jwt-decode";
+import GoogleLogin from "./GoogleLogin";
 
 const Login = () => {
-  // Google auth
-  const [user, setUser] = useState({});
-
-  function handleCallbackResponse(response) {
-    console.log("Encoded jwt id token: " + response.credentials);
-    var userObject = jwt_decode(response.credentials);
-    console.log(userObject);
-    setUser(userObject);
-    document.getElementById("signInDiv").hidden = true;
-  }
-
-  function handleSignOut(event) {
-    setUser({});
-    document.getElementById("signInDiv").hidden = false;
-  }
-  useEffect(() => {
-    // global google
-    google.accounts.id.initialize({
-      client_id:
-        "845489820362-2dveugtjsjes3fba07fd7vfm4vpli2dg.apps.googleusercontent.com",
-      callback: handleCallbackResponse,
-    });
-    google.accounts.id.renderButton(document.getElementById("signIDiv"), {
-      theme: "outline",
-      size: "large",
-    });
-    google.accounts.id.prompt();
-  }, []);
-
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
     username: "mopeno",
@@ -90,18 +61,7 @@ const Login = () => {
         </div>
       </form>
       {/* Google sign */}
-      <>
-        <div id="signInDiv"></div>
-        {Object.keys(user).length !== 0 && (
-          <button onClick={(e) => handleSignOut(e)}>Sign Out</button>
-        )}
-        {user && (
-          <div>
-            <img src={user.picture} alt={user.name} />
-            <h3>{user.name}</h3>
-          </div>
-        )}
-      </>
+      <GoogleLogin />
     </div>
   );
 };

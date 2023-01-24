@@ -4,25 +4,20 @@ import "@/components/styles/header.css";
 
 const Header = () => {
   return (
-    <header className="Pheader">
-      <nav>
-        <ul>
-          <li>
-            <Link to="/home">Accueil</Link>
-          </li>
-          <li>
-            <Link to="/service">Service</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-          | &nbsp;
-          <li>
-            <Link to="/admin">Admin</Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <div className="header">
+      <Link className="logo" to="/">
+        CompanyLogo
+      </Link>
+      <div className="header-right">
+        <Link className="active" to="/home">
+          Home
+        </Link>
+        <Link to="/service">Service</Link>
+        <Link to="/contact">Contact</Link>
+        <Link to="/contact">About</Link>
+        <Link to="/admin">Admin</Link>
+      </div>
+    </div>
   );
 };
 

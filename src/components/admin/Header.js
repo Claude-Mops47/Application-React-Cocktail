@@ -1,6 +1,6 @@
 import React from "react";
 import { accountService } from "@/_services/account.service.js";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "@/components/styles/header.css";
 
@@ -12,9 +12,18 @@ const Header = () => {
     navigate("/");
   };
   return (
-    <div className="Header_Admin">
-      Header Admin
-      <button onClick={logout}>Logout</button>
+    <div className="header">
+      <Link className="logo" to="/">
+        CompanyLogo
+      </Link>
+      <div className="header-right">
+        <Link className="active" to="/admin">
+          Admin
+        </Link>
+        <Link to="/contact">Contact</Link>
+        <Link to="/about">About</Link>
+        <button onClick={logout}>Logout</button>
+      </div>
     </div>
   );
 };

@@ -59,7 +59,7 @@ const PokemonEdit = () => {
   }, []);
 
   return (
-    <div className="PokemonEdit">
+    <div className="pokemon_edit">
       Pokemon Edit
       <form onSubmit={onSubmit}>
         <img src={pokemon.picture} alt={pokemon.name} />

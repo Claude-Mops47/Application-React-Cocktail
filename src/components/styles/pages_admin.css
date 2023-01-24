@@ -1,0 +1,9 @@
+.dashboard,
+.pokemon_list,
+.pokemon_add,
+.pokemon_edit,
+.user_list,
+.user_add,
+.user_edit {
+  margin-left: 200px; /* Same as the width of the sidenav */
+}

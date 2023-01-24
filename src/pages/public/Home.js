@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { pokemonService } from "@/_services";
 import Card from "@/components/public/Card";
+import "@/components/styles/pages_public.css";
 
 const Home = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -21,11 +22,11 @@ const Home = () => {
   }, []);
 
   if (!isLoad) {
-    return <div>Loading ...</div>;
+    return <div className="loader"></div>;
   }
 
   return (
-    <div className="home">
+    <div className="pokemon_home">
       {pokemons.map((data, id) => (
         <Card key={id} pokemon={data} />
       ))}

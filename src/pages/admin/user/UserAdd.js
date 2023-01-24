@@ -28,7 +28,7 @@ const UserAdd = () => {
   };
 
   return (
-    <div className="UserAdd">
+    <div className="user_add">
       UserAdd
       <form onSubmit={onSubmit}>
         <div className="group">

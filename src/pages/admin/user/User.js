@@ -32,7 +32,7 @@ const User = () => {
   };
 
   return (
-    <div className="User">
+    <div className="user_list">
       User List
       <table>
         <thead>

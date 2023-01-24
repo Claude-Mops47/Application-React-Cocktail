@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { pokemonService } from "@/_services";
 import { Link } from "react-router-dom";
 
-import "@/components/styles/pokemon.css";
+import "@/components/styles/pages_admin.css";
 
 const Pokemon = () => {
   // let navigate = useNavigate();
@@ -50,7 +50,7 @@ const Pokemon = () => {
   };
 
   return (
-    <div className="Pokemon">
+    <div className="pokemon_list">
       Pokemon List
       <table>
         <thead>
